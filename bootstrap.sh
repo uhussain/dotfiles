@@ -4,19 +4,21 @@ cd "$(dirname "${BASH_SOURCE}")";
 
 #git pull origin master;
 
-function doIt() {
-	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-		--exclude "README.md" --exclude "LICENSE-MIT.txt" -avh --no-perms . ~;
-	source ~/.bash_profile;
-}
+# only because we want relative symlinks and mac doesn't have ln -rs
+if [ ! $HOME == $(dirname $PWD) ]; then
+  echo "dotfiles repo expected to be installed in ~"
+  exit 1
+fi
 
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
-	doIt;
-else
-	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
-	echo "";
-	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		doIt;
-	fi;
-fi;
-unset doIt;
+for file in $(git ls-tree --name-only HEAD); do
+  [ $file == ".gitmodules" ] && continue
+  [ $file == "bootstrap.sh" ] && continue
+  src=$(basename $PWD)/$file
+  dest=$HOME/$file
+  if [ -e $dest -a ! -L $dest ]; then
+    mv -f $dest $src
+  elif [ -L $dest ]; then
+    rm -f $dest
+  fi
+  ln -s $src $dest
+done;
