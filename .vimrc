@@ -88,11 +88,10 @@ set laststatus=2              " always show status line.
 set shortmess=atI             " shortens messages
 set showcmd                   " display an incomplete command in statusline
 
+set statusline=%f\ -\ FileType:\ %y%= 
+set statusline+=%c,%l/%L\ %P 
+set statusline+=\ %{fugitive#statusline()}
 set statusline=%<%f\          " custom statusline
-set stl+=[%{&ff}]             " show fileformat
-set stl+=%y%m%r%=
-set stl+=%-14.(%l,%c%V%)\ %P
-
 
 set foldenable                " Turn on folding
 set foldmethod=marker         " Fold on the marker
@@ -242,26 +241,11 @@ if has("gui_running")
   colorscheme solarized
 endif
 
-" Programming
-" Plugin 'Blackrush/vim-gocode'
-Plugin 'fatih/vim-go'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'tpope/vim-rails'
-
-" Snippets
-Plugin 'gmarik/snipmate.vim'
-Plugin 'gmarik/snipmate.snippets'
-nnoremap <leader>so :Explore ~/.vim/bundle/snipmate.snippets/snippets/<CR>
-
-
-" Dash.app
-Plugin 'rizzatti/funcoo.vim'
-Plugin 'rizzatti/dash.vim'
-
 
 " Syntax highlight
 Plugin 'gmarik/vim-markdown'
 Plugin 'timcharper/textile.vim'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " Git integration
 Plugin 'tpope/vim-git'
@@ -273,63 +257,6 @@ nnoremap <leader>S :Gstatus \| 7<CR>
 inoremap <leader>W <Esc><leader>W
 inoremap <leader>C <Esc><leader>C
 inoremap <leader>S <Esc><leader>S
-
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-
-" bubble current line
-nmap <M-j> ]e
-nmap <M-k> [e
-" bubble visual selection lines
-vmap <M-j> ]egv
-vmap <M-k> [egv
-
-" Utility
-Plugin 'AndrewRadev/splitjoin.vim'
-nmap sj :SplitjoinJoin<cr>
-nmap sk :SplitjoinSplit<cr>
-
-Plugin 'gmarik/github-search.vim'
-
-Plugin 'gmarik/ide-popup.vim'
-Plugin 'gmarik/sudo-gui.vim'
-
-Plugin 'sjl/gundo.vim'
-
-Plugin 'mkitt/browser-refresh.vim'
-com! ONRRB :au! BufWritePost <buffer> :RRB
-com! NORRB :au! BufWritePost <buffer>
-
-
-" Plugin 'SuperTab'
-Plugin 'bogado/file-line'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'vim-scripts/lastpos.vim'
-
-Plugin 'Lokaltog/vim-easymotion'
-let g:EasyMotion_leader_key='<LocalLeader>'
-
-Plugin 'ZoomWin'
-noremap <leader>o :ZoomWin<CR>
-vnoremap <leader>o <C-C>:ZoomWin<CR>
-inoremap <leader>o <C-O>:ZoomWin<CR>
-
-Plugin 'tomtom/tlib_vim'
-Plugin 'tomtom/tcomment_vim'
-nnoremap // :TComment<CR>
-vnoremap // :TComment<CR>
-
-Plugin 'gmarik/hlmatch.vim'
-nnoremap # :<C-u>HlmCword<CR>
-nnoremap <leader># :<C-u>HlmGrepCword<CR>
-vnoremap # :<C-u>HlmVSel<CR>
-vnoremap <leader># :<C-u>HlmGrepVSel<CR>
-
-nnoremap ## :<C-u>HlmPartCword<CR>
-nnoremap <leader>## :<C-u>HlmPartGrepCword<CR>
-vnoremap ## :<C-u>HlmPartVSel<CR>
-vnoremap <leader>## :<C-u>HlmPartGrepVSel<CR>
 
 " FuzzyFinder
 Plugin 'L9'
@@ -373,11 +300,6 @@ nnoremap <leader>ea :CtrlP app/assets<cr>
 nnoremap <leader>ep :CtrlP public<cr>
 nnoremap <leader>er :topleft :vsplit config/routes.rb<cr>
 nnoremap <leader>eg :topleft :vsplit Gemfile<cr>
-
-Plugin 'gregsexton/gitv'
-Plugin 'rstacruz/sparkup.git', {'rtp': 'vim/'}
-let g:sparkupExecuteMapping = '<c-e>'
-let g:sparkupNextMapping = '<c-ee>'
 
 filetype plugin indent on      " Automatically detect file types.
 
