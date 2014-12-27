@@ -107,7 +107,7 @@ set virtualedit=block
 set splitbelow
 set splitright
 
-set list                      " display unprintable characters f12 - switches
+" display unprintable characters f12 - switches
 set listchars=tab:\ ·,eol:¬
 set listchars+=trail:·
 set listchars+=extends:»,precedes:«
@@ -236,10 +236,10 @@ call vundle#rc()
 Plugin 'gmarik/vundle' " let Vundle manage Vundle
 
 " Colorscheme
-Plugin 'gmarik/ingretu'
+Plugin 'altercation/vim-colors-solarized'
 
 if has("gui_running")
-  colorscheme ingretu
+  colorscheme solarized
 endif
 
 " Programming
@@ -373,19 +373,6 @@ nnoremap <leader>ea :CtrlP app/assets<cr>
 nnoremap <leader>ep :CtrlP public<cr>
 nnoremap <leader>er :topleft :vsplit config/routes.rb<cr>
 nnoremap <leader>eg :topleft :vsplit Gemfile<cr>
-
-
-" Plugin 'int3/vim-extradite'
-" Plugin 'Lokaltog/vim-powerline'
-Plugin 'bling/vim-airline'
-let g:airline_section_a = airline#section#create(['%<', 'file', 'readonly'])
-let g:airline_section_b = '' " airline#section#create_left(['mode', 'paste', 'iminsert'])
-let g:airline_section_c = '' " airline#section#create(['hunks'])
-let g:airline_section_gutter = airline#section#create(['%=%y%m%r[%{&ff}]'])
-let g:airline_section_x = '' " airline#section#create_right(['filetype'])
-" let g:airline_section_y = '%y%m%r%=[%{&ff}]' "airline#section#create_right(['ffenc'])
-let g:airline_section_z = airline#section#create(['%(%l,%c%V%) %P'])
-let g:airline_section_warning = '' "airline#section#create(['whitespace'])
 
 Plugin 'gregsexton/gitv'
 Plugin 'rstacruz/sparkup.git', {'rtp': 'vim/'}
