@@ -72,7 +72,7 @@ syntax on                      " enable syntax
 set mouse=a "enable mouse in GUI mode
 set mousehide                 " Hide mouse after chars typed
 
-set nonumber                  " line numbers Off
+set number                    " line numbers
 set showmatch                 " Show matching brackets.
 set matchtime=2               " Bracket blinking.
 
