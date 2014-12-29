@@ -1,5 +1,5 @@
 # Environment for login[02..06].hep.wisc.edu machines
-echo $HOSTNAME|grep -q '.hep.wisc.edu' || exit
+echo $HOSTNAME|grep -q '.hep.wisc.edu' || return
 
 if [ -f /etc/bashrc ]; then
    . /etc/bashrc

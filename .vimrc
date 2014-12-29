@@ -102,6 +102,7 @@ set splitbelow
 set splitright
 
 " display unprintable characters f12 - switches
+set nolist
 set listchars=tab:\ ·,eol:¬
 set listchars+=trail:·
 set listchars+=extends:»,precedes:«

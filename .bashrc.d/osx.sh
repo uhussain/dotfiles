@@ -1,5 +1,5 @@
 # OS X customizations
-[ $(uname) == "Darwin" ] || exit
+[ $(uname) == "Darwin" ] || return
 
 # Some aliases
 alias vi=vim
