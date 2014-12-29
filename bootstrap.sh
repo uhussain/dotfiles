@@ -11,9 +11,11 @@ if [ ! $HOME == $(dirname $PWD) ]; then
 fi
 
 for file in $(git ls-tree --name-only HEAD); do
+  # These cases are starting to get out of hand...
   [ $file == ".gitmodules" ] && continue
   [ $file == ".gitignore" ] && continue
   [ $file == "bootstrap.sh" ] && continue
+  [ $file == "README.md" ] && continue
   src=$(basename $PWD)/$file
   dest=$HOME/$file
   if [ -e $dest -a ! -L $dest ]; then
