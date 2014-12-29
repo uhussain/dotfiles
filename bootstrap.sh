@@ -12,11 +12,12 @@ fi
 
 for file in $(git ls-tree --name-only HEAD); do
   [ $file == ".gitmodules" ] && continue
+  [ $file == ".gitignore" ] && continue
   [ $file == "bootstrap.sh" ] && continue
   src=$(basename $PWD)/$file
   dest=$HOME/$file
   if [ -e $dest -a ! -L $dest ]; then
-    mv -f $dest $src
+    mv -f $dest $file
   elif [ -L $dest ]; then
     rm -f $dest
   fi
