@@ -88,11 +88,6 @@ set laststatus=2              " always show status line.
 set shortmess=atI             " shortens messages
 set showcmd                   " display an incomplete command in statusline
 
-set statusline=%f\ -\ FileType:\ %y%= 
-set statusline+=%c,%l/%L\ %P 
-set statusline+=\ %{fugitive#statusline()}
-set statusline=%<%f\          " custom statusline
-
 set foldenable                " Turn on folding
 set foldmethod=marker         " Fold on the marker
 set foldlevel=100             " Don't autofold anything (but I can still fold manually)
@@ -136,12 +131,6 @@ endif
 nnoremap <leader>c mz"dyy"dp`z
 vnoremap <leader>c "dymz"dP`z
 
-nnoremap <leader>rs :source ~/.vimrc<CR>
-nnoremap <leader>rt :tabnew ~/.vim/vimrc<CR>
-nnoremap <leader>re :e ~/.vim/vimrc<CR>
-nnoremap <leader>rd :e ~/.vim/ <CR>
-nnoremap <leader>rc :silent ! cd ~/.vim/ && git commit ~/.vim/vimrc -v <CR>
-
 " Tabs
 nnoremap <M-h> :tabprev<CR>
 nnoremap <M-l> :tabnext<CR>
@@ -151,9 +140,6 @@ nnoremap <localleader>- :bd<CR>
 nnoremap <localleader>-- :bd!<CR>
 " Split line(opposite to S-J joining line)
 nnoremap <C-J> gEa<CR><ESC>ew
-
-" map <silent> <C-W>v :vnew<CR>
-" map <silent> <C-W>s :snew<CR>
 
 " copy filename
 map <silent> <leader>. :let @+=expand('%:p').':'.line('.')<CR>
@@ -302,5 +288,10 @@ nnoremap <leader>er :topleft :vsplit config/routes.rb<cr>
 nnoremap <leader>eg :topleft :vsplit Gemfile<cr>
 
 filetype plugin indent on      " Automatically detect file types.
+
+" Customized statusline
+set statusline=%f\ -\ FileType:\ %y%= 
+set statusline+=%c,%l/%L\ %P 
+set statusline+=\ %{fugitive#statusline()}
 
 " " }}}

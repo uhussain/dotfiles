@@ -1,3 +1,6 @@
 export PATH=~/bin:$PATH
-alias vim="mvim -v"
-alias ll="ls -lah"
+
+for script in ~/.bashrc.d/*; do
+  [ -x $script ] || continue
+  . $script
+done
