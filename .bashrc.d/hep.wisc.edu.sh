@@ -32,7 +32,6 @@ else
 fi
 
 # Aliases
-alias rebash="pushd ~ && . .bashrc && popd"
 alias procrastinate="watch -n 30 'condor_q nsmith | tail -n 50'"
 
 # Shortcuts

@@ -1,7 +1,8 @@
 # OS X customizations
 [ $(uname) == "Darwin" ] || return
 
-# Some aliases
+# Some mac-specific aliases
 alias vi=vim
 alias vim="mvim -v"
-alias ll="ls -lah"
+alias ls="command ls -G"
+alias ll="ls -lhG"
