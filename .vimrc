@@ -197,6 +197,9 @@ inoremap <C-S> <C-O>:update<CR>
 " generate HTML version current buffer using current color scheme
 map <leader>2h :runtime! syntax/2html.vim<CR>
 
+" nohilight
+nnoremap <leader>n :nohlsearch<CR>
+
 " " }}}
 
 " AutoCommands " {{{
@@ -223,11 +226,9 @@ Plugin 'gmarik/vundle' " let Vundle manage Vundle
 
 " Colorscheme
 Plugin 'altercation/vim-colors-solarized'
-
-if has("gui_running")
-  colorscheme solarized
-endif
-
+set background=dark
+colorscheme solarized
+call togglebg#map("<F5>")
 
 " Syntax highlight
 Plugin 'gmarik/vim-markdown'
@@ -264,11 +265,8 @@ nnoremap <leader>6  :FufMruFile<CR>
 nnoremap <leader>7  :FufLine<CR>
 nnoremap <leader>8  :FufChangeList<CR>
 nnoremap <leader>9  :FufTaggedFile<CR>
-
-nnoremap <leader>p :FufDir ~/src/<CR>
-nnoremap <leader>ge :FufDir ~/.rvm/gems/<CR>
-
-nnoremap <leader>gn :vnew \| :FufFile ~/src/notes/<CR>
+let fuf_keyOpen = '<C-l>'
+let fuf_keyOpenTabpage = '<CR>'
 
 " " }}}
 
@@ -296,3 +294,13 @@ set statusline+=%c,%l/%L\ %P
 set statusline+=\ %{fugitive#statusline()}
 
 " " }}}
+
+" Search paths " {{{
+
+" This enables opening headers in CMSSW files via gf
+if $CMSSW_BASE != ''
+  set path+=$CMSSW_BASE/src
+  set path+=$CMSSW_RELEASE_BASE/src
+endif
+
+" "}}}
