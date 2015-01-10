@@ -4,7 +4,10 @@ fi
 
 unset USERNAME
 
-# Screen stuff
+# Fixes X forwarding in active tmux sessions
+tmux setenv -g DISPLAY $DISPLAY
+
+# Lets you know if there is already a tmux session available
 if tmux ls 2>/dev/null| grep -q 'attached'; then
   echo -e "\e[32mtmux session available, attched at:\e[m"
   term=$(pinky ${USER}|grep "pts"|head 1)
