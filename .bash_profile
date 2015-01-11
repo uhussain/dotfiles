@@ -4,9 +4,6 @@ fi
 
 unset USERNAME
 
-# Fixes X forwarding in active tmux sessions
-tmux setenv -g DISPLAY $DISPLAY
-
 # Lets you know if there is already a tmux session available
 if tmux ls 2>/dev/null| grep -q 'attached'; then
   echo -e "\e[32mtmux session available, attched at:\e[m"
@@ -20,3 +17,7 @@ elif tmux has 2>/dev/null; then
     tmux attach
   fi
 fi
+
+# Store X display location for screen use
+# use setupX to retrieve it in current environment
+echo $DISPLAY > ~/.Xdisplay
