@@ -136,8 +136,8 @@ nnoremap <leader>c mz"dyy"dp`z
 vnoremap <leader>c "dymz"dP`z
 
 " Tabs
-nnoremap <M-h> :tabprev<CR>
-nnoremap <M-l> :tabnext<CR>
+map <C-h> :tabprev<CR>
+map <C-l> :tabnext<CR>
 
 " Buffers
 nnoremap <localleader>- :bd<CR>
@@ -159,8 +159,8 @@ map <leader>EE :Vexplore!<CR><C-W>=
 " Make Control-direction switch between windows (like C-W h, etc)
 nmap <silent> <C-k> <C-W><C-k>
 nmap <silent> <C-j> <C-W><C-j>
-nmap <silent> <C-h> <C-W><C-h>
-nmap <silent> <C-l> <C-W><C-l>
+nmap <silent> <C-H> <C-W><C-h>
+nmap <silent> <C-L> <C-W><C-l>
 
   " vertical paragraph-movement
 nmap <C-K> {
@@ -202,6 +202,9 @@ map <leader>2h :runtime! syntax/2html.vim<CR>
 
 " nohilight
 nnoremap <leader>n :nohlsearch<CR>
+
+" make
+nnoremap <leader>m :make<CR>
 
 " " }}}
 
