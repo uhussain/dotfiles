@@ -205,6 +205,8 @@ nnoremap <leader>n :nohlsearch<CR>
 
 " make
 nnoremap <leader>m :make<CR>
+nnoremap <leader>mi :make install<CR>
+nnoremap <leader>mc :make clean<CR>
 
 " " }}}
 
