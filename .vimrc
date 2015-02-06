@@ -208,6 +208,9 @@ nnoremap <leader>m :make<CR>
 nnoremap <leader>mi :make install<CR>
 nnoremap <leader>mc :make clean<CR>
 
+" eXecute
+nnoremap <leader>x :!./%<CR>
+
 " " }}}
 
 " AutoCommands " {{{
@@ -303,12 +306,13 @@ set statusline+=\ %{fugitive#statusline()}
 
 " " }}}
 
-" Search paths " {{{
+" CMSSW Customizations " {{{
 
-" This enables opening headers in CMSSW files via gf
 if $CMSSW_BASE != ''
+  " This enables opening headers in CMSSW files via gf
   set path+=$CMSSW_BASE/src
   set path+=$CMSSW_RELEASE_BASE/src
+  nnoremap <leader>b :!pushd $CMSSW_BASE/src && scram b && popd<CR>
 endif
 
 " "}}}

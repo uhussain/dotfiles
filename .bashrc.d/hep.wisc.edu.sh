@@ -23,7 +23,7 @@ if echo $HOSTNAME|grep -q 'login0[24]'; then
   echo "Setting up SLC5 tweaks"
   declare -x SCRAM_ARCH="slc5_amd64_gcc462"
   export PATH=~/slc5/bin:$PATH
-  export LD_LIBRARY_PATH=~/slc5/lib
+  export LD_LIBRARY_PATH=~/slc5/lib:$LD_LIBRARY_PATH
   export CPLUS_INCLUDE_PATH=~/slc5/include
 else
   export PATH=/cms/sw/git/bin:$PATH
@@ -42,3 +42,4 @@ export cordic=/afs/hep.wisc.edu/cms/nsmith/CMSSW_7_3_0_pre1/src/L1Trigger/L1TCal
 export egrates=/afs/hep.wisc.edu/cms/nsmith/CMSSW_6_2_0_SLHC12_patch1/src/SLHCUpgradeSimulations/L1EGRateStudies/
 export l1t=/afs/hep.wisc.edu/cms/nsmith/CMSSW_7_3_0_pre2/src/
 export cmshome=/afs/hep.wisc.edu/cms/nsmith/
+export fsa=/afs/hep.wisc.edu/cms/nsmith/CMSSW_5_3_14/src/FinalStateAnalysis/
