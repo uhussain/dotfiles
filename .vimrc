@@ -76,6 +76,7 @@ set mouse=a "enable mouse in GUI mode
 set mousehide                 " Hide mouse after chars typed
 
 set number                    " line numbers
+set relativenumber            " relative numbering
 set showmatch                 " Show matching brackets.
 set matchtime=2               " Bracket blinking.
 
