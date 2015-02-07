@@ -276,6 +276,7 @@ nnoremap <leader>6  :FufMruFile<CR>
 nnoremap <leader>7  :FufLine<CR>
 nnoremap <leader>8  :FufChangeList<CR>
 nnoremap <leader>9  :FufTaggedFile<CR>
+nnoremap <leader>r  :FufRenewCache<CR>
 let fuf_keyOpen = '<C-l>'
 let fuf_keyOpenTabpage = '<CR>'
 
@@ -312,7 +313,10 @@ if $CMSSW_BASE != ''
   " This enables opening headers in CMSSW files via gf
   set path+=$CMSSW_BASE/src
   set path+=$CMSSW_RELEASE_BASE/src
+  " easy scram build
   nnoremap <leader>b :!pushd $CMSSW_BASE/src && scram b && popd<CR>
+  " autocomplete takes too long scanning includes
+  set complete-=i
 endif
 
 " "}}}
