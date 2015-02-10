@@ -40,6 +40,6 @@ alias procrastinate="watch -n 30 'condor_q nsmith | tail -n 50'"
 # Shortcuts
 export cordic=/afs/hep.wisc.edu/cms/nsmith/CMSSW_7_3_0_pre1/src/L1Trigger/L1TCalorimeter/cordic_test
 export egrates=/afs/hep.wisc.edu/cms/nsmith/CMSSW_6_2_0_SLHC12_patch1/src/SLHCUpgradeSimulations/L1EGRateStudies/
-export l1t=/afs/hep.wisc.edu/cms/nsmith/CMSSW_7_3_0_pre2/src/
+export l1t=/afs/hep.wisc.edu/cms/nsmith/CMSSW_7_4_0_pre6/src/
 export cmshome=/afs/hep.wisc.edu/cms/nsmith/
 export fsa=/afs/hep.wisc.edu/cms/nsmith/CMSSW_5_3_14/src/FinalStateAnalysis/
