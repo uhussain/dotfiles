@@ -1,1 +1,2 @@
 Rint.Logon: ~/.rootlogon.C
+Unix.*.Root.UseTTFonts: true

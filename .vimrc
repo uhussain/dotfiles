@@ -13,7 +13,8 @@ set tags=.git/tags;$HOME       " consider the repo tags first, then
                                " walk directory tree upto $HOME looking for tags
                                " note `;` sets the stop folder. :h file-search
 
-inoremap jk <Esc>              " This should be interesting...
+" This should be interesting...
+inoremap jk <Esc>
 inoremap kj <Esc>
 
 set modeline
@@ -254,9 +255,7 @@ Plugin 'tpope/vim-fugitive'
 nnoremap <leader>W :Gwrite<CR>
 nnoremap <leader>C :Gcommit -v<CR>
 nnoremap <leader>S :Gstatus \| 7<CR>
-inoremap <leader>W <Esc><leader>W
-inoremap <leader>C <Esc><leader>C
-inoremap <leader>S <Esc><leader>S
+nnoremap <leader>P :Gpush<CR>
 
 " FuzzyFinder
 Plugin 'L9'
