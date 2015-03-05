@@ -1,2 +1,9 @@
-Rint.Logon: ~/.rootlogon.C
-Unix.*.Root.UseTTFonts: true
+# Here go any overrides to the system.rootrc file (found in $ROOTSYS/etc/)
+# More info in Ch.1.7 of https://root.cern.ch/root/html534/guides/users-guide/ROOTUsersGuideChapters/GettingStarted.pdf
+
+# This was needed at LPC at one point, not sure how root finds the .rootlogon.C as opposed to rootlogon.C
+# Rint.Logon: ~/.rootlogon.C
+
+# This is suggested by CMS PUB committee, but is included in system.rootrc as of ROOT 5.34
+# See https://ghm.web.cern.ch/ghm/plots/
+# Unix.*.Root.UseTTFonts: true
