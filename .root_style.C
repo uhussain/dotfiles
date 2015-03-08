@@ -58,7 +58,9 @@
   tdrStyle->SetFuncWidth(1);
 
   //For the date:
-  tdrStyle->SetOptDate(0);
+  tdrStyle->SetOptDate(1);
+  tdrStyle->GetAttDate()->SetTextFont(42);
+  tdrStyle->GetAttDate()->SetTextColor(kGray);
   // tdrStyle->SetDateX(Float_t x = 0.01);
   // tdrStyle->SetDateY(Float_t y = 0.01);
 

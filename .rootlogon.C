@@ -7,4 +7,7 @@
   // Loads user-defined default style
   gROOT->ProcessLine(".x $HOME/.root_style.C");
   gROOT->SetStyle("tdrStyle");
+
+  // Load dotroot
+  gROOT->ProcessLine(".x $HOME/.root/dotrootInit.C");
 }

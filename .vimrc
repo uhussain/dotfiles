@@ -213,6 +213,8 @@ nnoremap <leader>mc :make clean<CR>
 " eXecute
 nnoremap <leader>x :!./%<CR>
 
+" logbook
+nnoremap <leader>l :vsplit ~/log.md<CR>
 " " }}}
 
 " AutoCommands " {{{
