@@ -215,6 +215,9 @@ nnoremap <leader>x :!./%<CR>
 
 " logbook
 nnoremap <leader>l :vsplit ~/log.md<CR>
+
+" latex
+nnoremap <leader>p :!pdflatex %<CR>
 " " }}}
 
 " AutoCommands " {{{
