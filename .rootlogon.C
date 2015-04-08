@@ -6,10 +6,10 @@
     gSystem->Load("libDataFormatsFWLite.so");
   }
 
-  // Loads user-defined default style
-  gROOT->ProcessLineSync(".x $HOME/.root_style.C");
-  gROOT->SetStyle("tdrStyle");
-
   // Load dotroot
   gROOT->ProcessLineSync(".x $HOME/.root/dotrootInit.C");
+
+  // Loads user-defined default style
+  dotrootImport("nsmith-/ROOTStyles");
+  gROOT->SetStyle("tdrStyle");
 }
