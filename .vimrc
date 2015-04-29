@@ -168,9 +168,7 @@ nmap <silent> <C-L> <C-W><C-l>
 nmap <C-K> {
 nmap <C-J> }
 
-" vertical split with CommandT
-nnoremap <leader>v :exec ':vnew \| CommandT'<CR>
-" and without
+" quick vert split
 nnoremap <leader>V :vnew<CR>
 
 " when pasting copy pasted text back to 
@@ -204,6 +202,9 @@ map <leader>2h :runtime! syntax/2html.vim<CR>
 
 " nohilight
 nnoremap <leader>n :nohlsearch<CR>
+
+" edit vimrc
+nnoremap <leader>v :tabe ~/dotfiles/.vimrc<CR>
 
 " make
 nnoremap <leader>m :make<CR>
@@ -294,14 +295,6 @@ let g:ctrlp_match_window_bottom=1
 let g:ctrlp_max_height = 20
 let g:ctrlp_match_window_reversed = 1
 let g:ctrlp_switch_buffer = 'e'
-nnoremap <leader>ev :CtrlP app/views<cr>
-nnoremap <leader>ec :CtrlP app/controllers<cr>
-nnoremap <leader>em :CtrlP app/models<cr>
-nnoremap <leader>el :CtrlP lib<cr>
-nnoremap <leader>ea :CtrlP app/assets<cr>
-nnoremap <leader>ep :CtrlP public<cr>
-nnoremap <leader>er :topleft :vsplit config/routes.rb<cr>
-nnoremap <leader>eg :topleft :vsplit Gemfile<cr>
 
 filetype plugin indent on      " Automatically detect file types.
 
