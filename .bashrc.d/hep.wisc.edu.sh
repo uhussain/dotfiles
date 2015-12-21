@@ -18,13 +18,14 @@ fi
 
 export PATH=~/opt/texlive/bin/x86_64-linux:$PATH
 
-if echo $HOSTNAME|grep -q 'login0[24]'; then
+if echo $HOSTNAME|grep -q 'login02'; then
   # SLC5 machine
   echo "Setting up SLC5 tweaks"
   declare -x SCRAM_ARCH="slc5_amd64_gcc462"
   export PATH=~/slc5/bin:$PATH
   export LD_LIBRARY_PATH=~/slc5/lib:$LD_LIBRARY_PATH
   export CPLUS_INCLUDE_PATH=~/slc5/include
+  export TERM=screen
 else
   export PATH=/cms/sw/git/bin:$PATH
   export LD_LIBRARY_PATH=~/lib:$LD_LIBRARY_PATH
@@ -42,4 +43,12 @@ export egrates=/afs/hep.wisc.edu/cms/nsmith/CMSSW_6_2_0_SLHC12_patch1/src/SLHCUp
 export l1t=/afs/hep.wisc.edu/cms/nsmith/CMSSW_7_4_0_pre6/src/
 export cmshome=/afs/hep.wisc.edu/cms/nsmith/
 export fsa=/afs/hep.wisc.edu/cms/nsmith/FSA_CMSSW_5_3_14/src/FinalStateAnalysis/
-export zhinv=/afs/hep.wisc.edu/cms/nsmith/CMSSW_5_3_14_patch2/src/ZHinvAnalysis/
+export zhinv=/afs/hep.wisc.edu/cms/nsmith/ZHinv/
+
+# Modern root
+newRoot() {
+  pushd $cmshome/CMSSW_7_5_0_pre3_ROOT5
+  cmsenv
+  popd
+  rebash
+}
