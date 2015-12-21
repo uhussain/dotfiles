@@ -264,6 +264,7 @@ nnoremap <leader>W :Gwrite<CR>
 nnoremap <leader>C :Gcommit -v<CR>
 nnoremap <leader>S :Gstatus \| 7<CR>
 nnoremap <leader>P :Gpush<CR>
+nnoremap <leader>gl :Glog<CR>
 
 " FuzzyFinder "{{{
 if v:version > 702

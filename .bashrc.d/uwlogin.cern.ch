@@ -21,12 +21,14 @@ export PATH=/cms/sw/git/bin:$PATH
 export LD_LIBRARY_PATH=~/lib:$LD_LIBRARY_PATH
 export CPLUS_INCLUDE_PATH=~/include
 
+source /afs/cern.ch/project/eos/installation/cms/etc/setup.sh
 
 # Make git stop searching before hitting /afs networked directory
 export GIT_CEILING_DIRECTORIES=/afs/cern.ch/
 
 # Aliases
 alias procrastinate="watch -n 30 'condor_q nsmith | tail -n 40'"
+alias brilcalc="PATH=$HOME/.local/bin:/afs/cern.ch/cms/lumi/brilconda-1.0.3/bin:$PATH brilcalc"
 
 # Shortcuts
 #export egrates=/afs/hep.wisc.edu/cms/nsmith/CMSSW_6_2_0_SLHC12_patch1/src/SLHCUpgradeSimulations/L1EGRateStudies/

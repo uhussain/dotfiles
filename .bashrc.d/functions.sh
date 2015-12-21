@@ -6,7 +6,7 @@ pdfmerge()
   if which gs >/dev/null; then
     outfile=$1
     shift
-    echo gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=${outfile} $@
+    gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=${outfile} $@
   else
     echo 'pdfmerge needs ghostscript'
   fi
