@@ -18,3 +18,14 @@ setupX()
   export DISPLAY=$(cat ~/.Xdisplay)
 }
 
+# --resubmit-failed-jobs + --match-input-files workaround
+resubmitFarmout()
+{
+  scratchDir=$1
+
+  for f in $(grep -l -r "JobExitCode': '0" --include=report.log $scratchDir); do
+    cp $scratchDir/submit $scratchDir/submit.1
+    sed -i "\#.*${f%/*}#,+7d" submit.1
+  done
+  echo condor_submit $scratchDir/submit.1
+}
