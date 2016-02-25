@@ -13,9 +13,3 @@ else
   PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 fi
 
-# Shell function to set X display (after .bash_profile sets up the appropriate address)
-setupX()
-{
-   export DISPLAY=$(cat ~/.Xdisplay)
-}
-

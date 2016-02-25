@@ -2,7 +2,7 @@
     editor = vim
 [user]
     name = Nick Smith
-    email = ncsmith6@wisc.edu
+    email = nick.smith@cern.ch
     github = nsmith-
 [alias]
     s = status
