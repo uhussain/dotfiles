@@ -4,8 +4,6 @@
     name = Nick Smith
     email = ncsmith6@wisc.edu
     github = nsmith-
-[push]
-    default = simple
 [alias]
     s = status
     c = commit
