@@ -4,8 +4,6 @@
     name = Nick Smith
     email = nick.smith@cern.ch
     github = nsmith-
-[push]
-    default = simple
 [alias]
     s = status
     c = commit
