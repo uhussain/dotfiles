@@ -6,6 +6,7 @@
     github = nsmith-
 [alias]
     s = status
+    st = status -uno
     c = commit
     b = branch --verbose
     co = checkout
