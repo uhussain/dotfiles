@@ -32,8 +32,4 @@ alias brilcalc="PATH=$HOME/.local/bin:/afs/cern.ch/cms/lumi/brilconda-1.0.3/bin:
 alias justgivememydamnlumi="PATH=$HOME/.local/bin:/afs/cern.ch/cms/lumi/brilconda-1.0.3/bin:$PATH brilcalc lumi -b \"STABLE BEAMS\" --normtag=/afs/cern.ch/user/l/lumipro/public/normtag_file/normtag_DATACERT.json -u /fb -i"
 
 # Shortcuts
-#export egrates=/afs/hep.wisc.edu/cms/nsmith/CMSSW_6_2_0_SLHC12_patch1/src/SLHCUpgradeSimulations/L1EGRateStudies/
-#export l1t=/afs/hep.wisc.edu/cms/nsmith/CMSSW_7_4_0_pre6/src/
-#export cmshome=/afs/hep.wisc.edu/cms/nsmith/
-#export fsa=/afs/hep.wisc.edu/cms/nsmith/FSA_CMSSW_5_3_14/src/FinalStateAnalysis/
-#export zhinv=/afs/hep.wisc.edu/cms/nsmith/CMSSW_5_3_14_patch2/src/ZHinvAnalysis/
+export work=/afs/cern.ch/work/n/ncsmith/
