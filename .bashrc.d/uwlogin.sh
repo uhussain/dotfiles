@@ -17,11 +17,11 @@ else
 fi
 
 export PATH=~/opt/texlive/bin/x86_64-linux:$PATH
-export PATH=/cms/sw/git/bin:$PATH
+export PATH=/cms/sw/python/bin/:/cms/sw/git/bin:$PATH
 export LD_LIBRARY_PATH=~/lib:$LD_LIBRARY_PATH
 export CPLUS_INCLUDE_PATH=~/include
 
-source /afs/cern.ch/project/eos/installation/cms/etc/setup.sh
+source /afs/cern.ch/project/eos/installation/0.3.121-aquamarine/setup.sh
 
 # Make git stop searching before hitting /afs networked directory
 export GIT_CEILING_DIRECTORIES=/afs/cern.ch/
