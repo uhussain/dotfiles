@@ -3,7 +3,7 @@
     // Provides access to methods in CMSSW framework
     // gSystem->Load("libFWCoreFWLite.so");
     // AutoLibraryLoader::enable();
-    FWLiteEnabler::enable();
+    gROOT->ProcessLineSync("FWLiteEnabler::enable();");
     gSystem->Load("libDataFormatsFWLite.so");
   }
 

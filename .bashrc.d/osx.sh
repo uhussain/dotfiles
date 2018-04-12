@@ -1,8 +1,13 @@
 # OS X customizations
 [ $(uname) == "Darwin" ] || return
 
+export PATH="/Applications/Ableton Live 9 Suite.app/Contents/MacOS":$PATH
 # ROOT
-. $(brew --prefix root)/libexec/thisroot.sh
+#. /Applications/root_v6.06.08/bin/thisroot.sh
+. $(brew --prefix root)/bin/thisroot.sh
+
+# homebrew sbin
+export PATH="/usr/local/sbin:$PATH"
 
 # Some mac-specific aliases
 alias vi=vim
