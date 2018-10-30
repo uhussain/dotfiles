@@ -252,20 +252,17 @@ au BufWinEnter *.txt if &ft == 'help' | wincmd H | nmap q :q<CR> | endif
 " Scripts and Plugins " {{{
 filetype off
 runtime macros/matchit.vim
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
 
 " For vimdiff
 Plugin 'vim-scripts/diffchar.vim'
 let g:DiffUnit="Word1"
 
-Plugin 'gmarik/vundle' " let Vundle manage Vundle
-
 " Colorscheme
 Plugin 'altercation/vim-colors-solarized'
-set background=dark
-colorscheme solarized
-call togglebg#map("<F5>")
 
 " Syntax highlight
 Plugin 'sheerun/vim-polyglot'
@@ -324,6 +321,12 @@ let g:ctrlp_match_window_bottom=1
 let g:ctrlp_max_height = 20
 let g:ctrlp_match_window_reversed = 1
 let g:ctrlp_switch_buffer = 'e'
+
+call vundle#end()            " required
+
+syntax enable
+set background=dark
+colorscheme solarized
 
 filetype plugin indent on      " Automatically detect file types.
 
