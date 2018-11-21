@@ -231,12 +231,14 @@ nnoremap <leader>l :vsplit ~/log.md<CR>
 
 " latex
 nnoremap <leader>p :!pdflatex %<CR>
+let g:tex_comment_nospell=1
 " " }}}
 
 " AutoCommands " {{{
 au BufRead,BufNewFile {*.go}                                          setl ft=go tabstop=2 softtabstop=2 noexpandtab smarttab
 au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru}     setl ft=ruby tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
 au BufRead,BufNewFile {*.py}                                          setl ft=python tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab
+au BufRead,BufNewFile {*.tex}                                         setl ft=tex spell spelllang=en
 au BufRead,BufNewFile {*.local}                                       setl ft=sh
 au BufRead,BufNewFile {*.md,*.mkd,*.markdown}                         setl ft=markdown
 au BufRead,BufNewFile {*.scala}                                       setl ft=scala
@@ -250,21 +252,32 @@ au BufWinEnter *.txt if &ft == 'help' | wincmd H | nmap q :q<CR> | endif
 " Scripts and Plugins " {{{
 filetype off
 runtime macros/matchit.vim
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Plugin 'gmarik/vundle' " let Vundle manage Vundle
+Plugin 'VundleVim/Vundle.vim'
+
+" For vimdiff
+Plugin 'vim-scripts/diffchar.vim'
+let g:DiffUnit="Word1"
 
 " Colorscheme
 Plugin 'altercation/vim-colors-solarized'
-set background=dark
-colorscheme solarized
-call togglebg#map("<F5>")
 
 " Syntax highlight
-Plugin 'gmarik/vim-markdown'
-Plugin 'timcharper/textile.vim'
-Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'sheerun/vim-polyglot'
+
+" Syntax checking
+" Plugin 'vim-syntastic/syntastic'
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_flake8_args='--ignore=E501,E225'
 
 " Git integration
 Plugin 'tpope/vim-git'
@@ -308,6 +321,12 @@ let g:ctrlp_match_window_bottom=1
 let g:ctrlp_max_height = 20
 let g:ctrlp_match_window_reversed = 1
 let g:ctrlp_switch_buffer = 'e'
+
+call vundle#end()            " required
+
+syntax enable
+set background=dark
+colorscheme solarized
 
 filetype plugin indent on      " Automatically detect file types.
 
