@@ -1,17 +1,5 @@
-[core]
-    editor = vim
+# This is Git's per-user configuration file.
 [user]
-    name = Nick Smith
-    email = nick.smith@cern.ch
-    github = nsmith-
-[alias]
-    s = status
-    st = status -uno
-    c = commit
-    b = branch --verbose
-    co = checkout
-    unstage = reset HEAD --
-    l = log --decorate --stat
-    graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
-[push]
-	default = current
+# Please adapt and uncomment the following lines:
+	name = Usama Hussain
+	email = uhussain@wisc.edu 

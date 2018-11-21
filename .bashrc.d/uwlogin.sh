@@ -13,7 +13,7 @@ if touch a 2>/dev/null; then
   rm a
 else
   echo "AFS Credentials expired; running kinit && aklog"
-  kinit -l 30d ncsmith@CERN.CH && aklog
+  kinit -l 30d uhussain@CERN.CH && aklog
 fi
 
 export PATH=~/opt/texlive/bin/x86_64-linux:$PATH
@@ -27,9 +27,9 @@ source /afs/cern.ch/project/eos/installation/0.3.121-aquamarine/setup.sh
 export GIT_CEILING_DIRECTORIES=/afs/cern.ch/
 
 # Aliases
-alias procrastinate="watch -n 30 'condor_q nsmith | tail -n 40'"
+alias procrastinate="watch -n 30 'condor_q uhussain | tail -n 40'"
 alias brilcalc="PATH=$HOME/.local/bin:/afs/cern.ch/cms/lumi/brilconda-1.0.3/bin:$PATH brilcalc"
 alias justgivememydamnlumi="PATH=$HOME/.local/bin:/afs/cern.ch/cms/lumi/brilconda-1.0.3/bin:$PATH brilcalc lumi -b \"STABLE BEAMS\" --normtag=/afs/cern.ch/user/l/lumipro/public/normtag_file/normtag_DATACERT.json -u /fb -i"
 
 # Shortcuts
-export work=/afs/cern.ch/work/n/ncsmith/
+export work=/afs/cern.ch/work/u/uhussain/

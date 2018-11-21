@@ -15,4 +15,4 @@ alias brilcalc="PATH=$HOME/.local/bin:/afs/cern.ch/cms/lumi/brilconda-1.0.3/bin:
 alias justgivememydamnlumi="PATH=$HOME/.local/bin:/afs/cern.ch/cms/lumi/brilconda-1.0.3/bin:$PATH brilcalc lumi -b \"STABLE BEAMS\" --normtag=/afs/cern.ch/user/l/lumipro/public/normtag_file/normtag_DATACERT.json -u /fb -i"
 
 # Shortcuts
-export work=/afs/cern.ch/work/n/ncsmith/
+export work=/afs/cern.ch/work/u/uhussain

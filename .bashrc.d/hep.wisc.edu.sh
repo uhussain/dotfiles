@@ -13,7 +13,7 @@ if touch a 2>/dev/null; then
   rm a
 else
   echo "AFS Credentials expired; running kinit && aklog"
-  kinit -l 30d nsmith@HEP.WISC.EDU && aklog
+  kinit -l 30d uhussain@HEP.WISC.EDU && aklog
 fi
 
 export PATH=~/opt/texlive/bin/x86_64-linux:$PATH
@@ -36,7 +36,7 @@ fi
 export GIT_CEILING_DIRECTORIES=/afs/hep.wisc.edu
 
 # Aliases
-alias procrastinate="watch -n 30 'condor_q nsmith | tail -n 40'"
+alias procrastinate="watch -n 30 'condor_q uhussain | tail -n 40'"
 
 # Shortcuts
 export egrates=/afs/hep.wisc.edu/cms/nsmith/CMSSW_6_2_0_SLHC12_patch1/src/SLHCUpgradeSimulations/L1EGRateStudies/
